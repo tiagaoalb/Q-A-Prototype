@@ -1,11 +1,6 @@
-const {Account} = require('./models');
+// const {Account} = require('./models');
 
-const security = require('./core/security');
 const faker = require('faker');
-
-const KeyBuilder = security.keygen;
-const HashBuilder = security.hashgen;
-const passCheck = security.check;
 
 // const seed = async (count = 10) => {
 //   for (let index = 0; index < count; index++) {
