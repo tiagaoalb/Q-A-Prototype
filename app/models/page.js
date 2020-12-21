@@ -1,6 +1,6 @@
 'use strict';
 const {Model} = require('sequelize');
-const {Question} = require('./index');
+
 module.exports = (sequelize, DataTypes) => {
   class Page extends Model {
     /**
