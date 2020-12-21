@@ -22,6 +22,6 @@ const seed = async (count = 10) => {
 };
 
 console.time('page');
-seed(10)
+seed(100)
     .then(() => console.timeEnd('page'))
     .then(() => process.exit(0));
