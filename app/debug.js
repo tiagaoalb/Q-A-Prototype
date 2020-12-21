@@ -1,9 +1,8 @@
-const {Page, sequelize} = require('./models');
+const {Page, Question} = require('./models');
 
 const seed = async (count = 10) => {
-  await Page.destroy({
-    truncate: true,
-  });
+  await Question.sync({force: true});
+  await Page.sync({force: true});
 
   for (let index = 0; index < count; index++) {
     await Page.create({
@@ -23,6 +22,6 @@ const seed = async (count = 10) => {
 };
 
 console.time('page');
-seed(10000)
+seed(10)
     .then(() => console.timeEnd('page'))
     .then(() => process.exit(0));

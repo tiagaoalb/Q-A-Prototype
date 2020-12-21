@@ -1,8 +1,8 @@
 'use strict';
 const {Model} = require('sequelize');
-const {Question} = require('./index');
+
 module.exports = (sequelize, DataTypes) => {
-  class Page extends Model {
+  class Question extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Page.init(
+  Question.init(
       {
         id: {
           type: DataTypes.INTEGER,
@@ -21,29 +21,25 @@ module.exports = (sequelize, DataTypes) => {
           autoIncrement: true,
           primaryKey: true,
         },
-        uuid: {
-          type: DataTypes.UUID,
-          allowNull: false,
-          unique: true,
-          primaryKey: true,
-          defaultValue: DataTypes.UUIDV4,
-        },
-        title: {
-          type: DataTypes.STRING,
+        page_id: {
+          type: DataTypes.INTEGER,
           allowNull: false,
         },
-        sub_title: {
-          type: DataTypes.STRING,
+        user_id: {
+          type: DataTypes.INTEGER,
           allowNull: true,
-          defaultValue: '',
+        },
+        text: {
+          type: DataTypes.TEXT,
+          allowNull: false,
         },
       },
       {
         sequelize,
         timestamps: true,
-        modelName: 'Page',
-        tableName: 'Pages',
+        modelName: 'Question',
+        tableName: 'Questions',
       },
   );
-  return Page;
+  return Question;
 };
