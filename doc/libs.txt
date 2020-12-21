@@ -1,0 +1,5 @@
+https://jestjs.io/docs/en/getting-started
+https://github.com/marak/Faker.js/
+https://www.npmjs.com/package/jsonfile
+https://www.npmjs.com/package/uuid
+https://eslint.org/docs/rules/

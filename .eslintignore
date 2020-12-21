@@ -1,0 +1,13 @@
+node_modules
+package.json
+package-lock.json
+*.gif
+*.png
+*.jpg
+*.jpeg
+tmp
+temp
+*.temp
+*.tmp
+*.log
+test
