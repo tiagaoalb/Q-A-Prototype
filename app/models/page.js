@@ -27,7 +27,16 @@ module.exports = (sequelize, DataTypes) => {
           primaryKey: true,
           defaultValue: DataTypes.UUIDV4,
         },
-        isActive: {
+        title: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        sub_title: {
+          type: DataTypes.STRING,
+          allowNull: true,
+          defaultValue: '',
+        },
+        is_active: {
           type: DataTypes.BOOLEAN,
           allowNull: false,
           defaultValue: true,
