@@ -1,7 +1,7 @@
 'use strict';
 const {Model} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class question extends Model {
+  class page extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  question.init(
+  page.init(
       {
         id: {
           type: DataTypes.INTEGER,
@@ -27,48 +27,16 @@ module.exports = (sequelize, DataTypes) => {
           primaryKey: true,
           defaultValue: DataTypes.UUIDV4,
         },
-        email: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          unique: true,
-          validate: {
-            isEmail: {
-              msg: 'invalid email address',
-            },
-          },
-        },
-        username: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          unique: true,
-        },
-        password: {
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
-        key1: {
-          type: DataTypes.TEXT,
-          allowNull: false,
-        },
-        key2: {
-          type: DataTypes.TEXT,
-          allowNull: false,
-        },
         isActive: {
           type: DataTypes.BOOLEAN,
           allowNull: false,
           defaultValue: true,
         },
-        isVerified: {
-          type: DataTypes.BOOLEAN,
-          allowNull: false,
-          defaultValue: false,
-        },
       },
       {
         sequelize,
-        modelName: 'question',
+        modelName: 'page',
       },
   );
-  return question;
+  return page;
 };
